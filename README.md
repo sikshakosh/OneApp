@@ -1,12 +1,10 @@
 # OneApp
 
-# Steps to clone the project
+## Steps to clone the project
 
 Execute the following command to clone thhe project
+### git clone --recurse-submodules -j8 https://github.com/wideclassrooms/OneApp.git
 
-## git clone --recurse-submodules -j8 https://github.com/wideclassrooms/OneApp.git
-
-Go to working branch
-## git checkout develop 
-
+Go to main branch
+### git checkout main 
 And run the project.
