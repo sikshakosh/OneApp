@@ -1,6 +1,14 @@
 # OneApp
 
-## Steps to clone the project
+## Steps to Fork the project - [If you need to get latest updates]
+
+Fork the project, it would come in your github account
+
+Then clone the project using following command
+
+    `git clone https://github.com/[Your GIT Username]/OneApp.git`
+
+## Steps to Clone the project - [If you need not to get latest updates]
 
 Execute the following command to clone the project
 
