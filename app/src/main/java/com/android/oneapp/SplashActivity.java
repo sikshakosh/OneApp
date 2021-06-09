@@ -7,9 +7,6 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
-import com.android.oneapp.R;
-import com.android.appcompose.composable.utility.ImagePageFragment;
-import com.android.appcompose.composable.utility.ImageZoomOutPageTransformer;
 
 public class SplashActivity extends FragmentActivity {
     /**
