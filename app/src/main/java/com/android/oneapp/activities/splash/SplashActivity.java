@@ -1,4 +1,4 @@
-package com.android.oneapp.activities;
+package com.android.oneapp.activities.splash;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
