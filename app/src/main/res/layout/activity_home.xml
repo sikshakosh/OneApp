@@ -6,21 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".activities.home.HomeActivity">
 
-<!--    <androidx.appcompat.widget.Toolbar-->
-<!--        android:id="@+id/toolbar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="?attr/actionBarSize"-->
-<!--        android:background="?attr/colorPrimary"-->
-<!--        android:minHeight="?attr/actionBarSize"-->
-<!--        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
-<!--        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />-->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <com.android.appcompose.layout.tabs.SlidingTabLayout
+    <com.android.appcompose.layout.tabs.AppTabLayout
         android:id="@+id/tab_host"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
-        android:background="?attr/colorPrimary" />
+        android:theme="@style/ThemeOverlay.App.TabLayout"
+        />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"

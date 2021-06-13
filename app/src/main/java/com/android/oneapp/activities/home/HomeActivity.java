@@ -17,39 +17,44 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
-import  com.android.appcompose.layout.tabs.SlidingFragmentPagerAdapter;
-import  com.android.appcompose.layout.tabs.SlidingTabLayout;
+import com.android.appcompose.layout.tabs.AppFragmentPagerAdapter;
+import com.android.appcompose.layout.tabs.AppTabLayout;
 
 import com.android.appcompose.layout.tabs.TabType;
 import com.android.oneapp.R;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private SlidingTabLayout tabLayout;
+    private AppTabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-       // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        tabLayout = (AppTabLayout) findViewById(R.id.tab_host);
+
+        setSupportActionBar(toolbar);
+
+
+
+        setupTabLayout();
+    }
+
+    private void setupTabLayout(){
         ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
-        tabLayout = (SlidingTabLayout) findViewById(R.id.tab_host);
-
-       // setSupportActionBar(toolbar);
-
         TabAdapter adapter = new TabAdapter(getSupportFragmentManager(), this);
         viewPager.setAdapter(adapter);
-
         tabLayout.setTextSize(18);
         tabLayout.setAllCaps(false);
         tabLayout.setDistributeEvenly(true);
-        tabLayout.setTabType(TabType.TEXT_ONLY);
+        tabLayout.setTabType(TabType.ICON_ONLY);
         tabLayout.setSelectedIndicatorColors(getResources().getColor(android.R.color.white));
         tabLayout.setActionBar(getSupportActionBar());
-        tabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.colorAccent));
-        tabLayout.setCustomFocusedColor(getResources().getColor(R.color.colorAccent));
-        tabLayout.setCustomUnfocusedColor(getResources().getColor(R.color.colorAccent));
+        tabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.gray));
+        tabLayout.setCustomFocusedColor(getResources().getColor(R.color.gray));
+        tabLayout.setCustomUnfocusedColor(getResources().getColor(R.color.dark_gray));
 
         tabLayout.setViewPager(viewPager);
     }
@@ -103,18 +108,18 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
-    public static class TabAdapter extends SlidingFragmentPagerAdapter {
+    public static class TabAdapter extends AppFragmentPagerAdapter {
 
         private String[] titles = {
-                "Contacts",
-                "Favorites",
-                "Groups",
+                "Home",
+                "Search",
+                "Account",
         };
 
         private int[] icons = {
-                R.drawable.account,
-                R.drawable.star,
-                R.drawable.account_multiple
+                R.drawable.ic_home,
+                R.drawable.ic_search,
+                R.drawable.ic_account
         };
         private Context context;
 
