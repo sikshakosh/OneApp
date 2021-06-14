@@ -112,14 +112,18 @@ public class HomeActivity extends AppCompatActivity {
 
         private String[] titles = {
                 "Home",
-                "Search",
-                "Account",
+                "My Classrooms",
+                "My Network",
+                "Post",
+                "Notifications",
         };
 
         private int[] icons = {
                 R.drawable.ic_home,
-                R.drawable.ic_search,
-                R.drawable.ic_account
+                R.drawable.ic_classrooms,
+                R.drawable.ic_network,
+                R.drawable.ic_post,
+                R.drawable.ic_notifications
         };
         private Context context;
 
