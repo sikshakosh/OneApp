@@ -12,7 +12,7 @@
     <com.android.appcompose.composable.utility.slider.viewpager2.ImageSliderView
         android:id="@+id/slider"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="200dp"
         libProj:images = "@array/tutorial_images"
         libProj:transformer = "zoomout" />
 
