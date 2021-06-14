@@ -1,6 +1,7 @@
 package com.android.oneapp.activities.home;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.net.Network;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -137,11 +138,31 @@ public class HomeActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             Bundle bundle = new Bundle();
             bundle.putInt(TabFragment.POSITION, position + 1);
+            Fragment selectedFragment = null;
+            switch (position){
+                case 0:
+                    //selectedFragment =  HomeFragment.newInstance("0", "Home Page");
+                    selectedFragment =  HomeFragment.newInstance("0", "Home Page");
+                    break;
+                case 1:
+                    selectedFragment =  ClassroomsFragment.newInstance("0", "Classrooms Page");
+                    break;
+                case 2:
+                    selectedFragment =  NetworkFragment.newInstance("0", "Network Page");
+                    break;
+                case 3:
+                    selectedFragment =  PostFragment.newInstance("0", "Post Page");
+                    break;
+                case 4:
+                    selectedFragment =  NotificationFragment.newInstance("0", "Notification Page");
+                    break;
+                default:
+                    return null;
+            }
 
-            Fragment fragment = new TabFragment();
-            fragment.setArguments(bundle);
+            selectedFragment.setArguments(bundle);
 
-            return fragment;
+            return selectedFragment;
         }
 
         @Override
