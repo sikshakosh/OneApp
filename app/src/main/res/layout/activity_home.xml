@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.home.HomeActivity">
+    tools:context=".activities.home.HomeActivity"
+    xmlns:libProj="http://schemas.android.com/apk/res-auto">
 
 
     <androidx.appcompat.widget.Toolbar
@@ -35,6 +36,7 @@
         android:layout_height="?attr/actionBarSize"
         android:minHeight="?attr/actionBarSize"
         app:layout_constraintBottom_toBottomOf="parent"
+        libProj:stripPos = "top"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
