@@ -26,7 +26,7 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private View view;
+
 
     public HomeFragment() {
         // Required empty public constructor
@@ -63,21 +63,14 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        this.view =  inflater.inflate(R.layout.fragment_home, container, false);
+        View view =  inflater.inflate(R.layout.fragment_home, container, false);
+        //TextView tv = (TextView) view.findViewById(R.id.textView);
+        //tv.setText("Home Page");
         return view;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        TextView positionText = (TextView) this.findViewById(R.id.FragmentTabText);
 
-        int position = getArguments().getInt(ARG_PARAM1);
-        positionText.setText("Position " + position);
-    }
 
-    private View findViewById(int id) {
-        return view.findViewById(id);
-    }
+
 
 }
