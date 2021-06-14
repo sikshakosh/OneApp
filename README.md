@@ -23,10 +23,14 @@ Here we work with android beginners to develop common modules used in almost all
 ## Developed Modules
 1. ImageSlider
 2. Image Slider with Dot Indicator
+3. Addded Skip Button
+4. Added TabLayout
 
 ## Under Development
-3. Add Skip Button
-4. Design Home Page
+
+4. Design Home Screen
+5. Search Screen
+6. Account Screen
 
 
 

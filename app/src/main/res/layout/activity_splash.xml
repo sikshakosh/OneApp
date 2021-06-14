@@ -14,4 +14,6 @@
         android:layout_height="match_parent"
         libProj:images = "@array/tutorial_images"
         libProj:transformer = "zoomout" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
