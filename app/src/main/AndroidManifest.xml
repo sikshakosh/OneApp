@@ -9,10 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OneApp">
-        <activity android:name=".activities.home.HomeActivity"
-            >
-
-        </activity>
+        <activity android:name=".activities.home.HomeActivity"></activity>
         <activity
             android:name=".activities.splash.SplashActivity"
             android:label="@string/app_name"
