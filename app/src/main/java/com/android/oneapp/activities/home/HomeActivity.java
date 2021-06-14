@@ -52,10 +52,10 @@ public class HomeActivity extends AppCompatActivity {
         tabLayout.setTabType(TabType.ICON_ONLY);
         tabLayout.setSelectedIndicatorColors(getResources().getColor(android.R.color.white));
         tabLayout.setActionBar(getSupportActionBar());
-        tabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.gray));
-        tabLayout.setCustomFocusedColor(getResources().getColor(R.color.gray));
+        tabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.black));
+        tabLayout.setCustomFocusedColor(getResources().getColor(R.color.black));
         tabLayout.setCustomUnfocusedColor(getResources().getColor(R.color.dark_gray));
-
+        tabLayout.setBackground(getResources().getDrawable(R.drawable.background_tab));
         tabLayout.setViewPager(viewPager);
     }
 
