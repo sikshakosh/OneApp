@@ -37,12 +37,13 @@ public class HomeActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private AppBarLayout topAppBar;
     private NavigationView navigationView;
+    private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         topAppBar = (AppBarLayout) findViewById(R.id.topAppBar);
         navigationView = (NavigationView)findViewById(R.id.navigationView);
 
@@ -112,7 +113,8 @@ public class HomeActivity extends AppCompatActivity {
         // Highlight the selected item has been done by NavigationView
         menuItem.setChecked(true);
         // Set action bar title
-        setTitle(menuItem.getTitle());
+        toolbar.setTitle(menuItem.getTitle());
+
         // Close the navigation drawer
         drawerLayout.closeDrawers();
     }
