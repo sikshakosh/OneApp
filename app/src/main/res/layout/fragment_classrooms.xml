@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/mainConstraint"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".fragments.HomeFragment"
+    tools:context=".fragments.ClassroomFragment"
     android:background="@color/gray_50"
 
     >
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
+        android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         tools:context="com.example.android.materialme.MainActivity"
         android:layout_marginBottom="?actionBarSize"
-        android:paddingBottom="?actionBarSize"
         >
 
         <androidx.recyclerview.widget.RecyclerView
@@ -26,8 +25,6 @@
             android:scrollbars="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            android:clipToPadding="false"
             />
 
     </RelativeLayout>

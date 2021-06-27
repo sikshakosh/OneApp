@@ -1,10 +1,91 @@
 <resources>
-    <string name="app_name">OneApp</string>
-    <string name="tab_1">Home</string>
-    <string name="tab_2">Search</string>
-    <string name="tab_3">Bookmarks</string>
+    <!--    Main Activity-->
+    <string name="app_name">App360</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="skip">Skip</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title_placeholder">Title</string>
+    <string name="news_placeholder">News</string>
+    <string name="sports_info_placeholder">Here is some news</string>
+
+    <string-array name="member_names">
+        <item>Ayesha</item>
+        <item>Kishan</item>
+        <item>Priyanka</item>
+        <item>Vedant</item>
+        <item>Sushant</item>
+        <item>Ajit</item>
+        <item>Vinayak</item>
+        <item>Shubham</item>
+        <item>Astha</item>
+        <item>Vamsi</item>
+        <item>Pritish</item>
+    </string-array>
+
+    <string-array name="classroom_info">
+        <item>App360</item>
+        <item>App360</item>
+        <item>App360</item>
+        <item>App360</item>
+        <item>App360</item>
+        <item>App360</item>
+        <item>App360</item>
+        <item>App360</item>
+        <item>App360</item>
+        <item>App360</item>
+        <item>App360</item>
+    </string-array>
+
+    <string-array name="questions">
+        <item>This is a sample question. Answer the questiion in detailed explanation.</item>
+        <item>This is a sample question</item>
+        <item>This is a sample question</item>
+        <item>This is a sample question</item>
+        <item>This is a sample question</item>
+        <item>This is a sample question</item>
+        <item>This is a sample question</item>
+        <item>This is a sample question</item>
+        <item>This is a sample question</item>
+        <item>This is a sample question</item>
+        <item>This is a sample question</item>
+    </string-array>
+
+    <string-array name="questions_postedby">
+        <item>Ayesha</item>
+        <item>Kishan</item>
+        <item>Priyanka</item>
+        <item>Vedant</item>
+        <item>Sushant</item>
+        <item>Ajit</item>
+        <item>Vinayak</item>
+        <item>Shubham</item>
+        <item>Astha</item>
+        <item>Vamsi</item>
+        <item>Pritish</item>
+    </string-array>
+
+    <string name="supporting">Greyhound divisively hello coldly wonderfully marginally far upon excluding.</string>
+    <string name="title">Title</string>
+    <string name="subhead">Subhead</string>
+    <string name="primary">Title goes here</string>
+    <string name="primary_short">Title here</string>
+    <string name="subtext">Subtitle here</string>
+    <string name="action_1">Action 1</string>
+    <string name="action_2">Action 2</string>
+    <string name="expanded_supporting">I\'m a thing. But, like most politicians, he promised more than he could deliver. You won\'t have time for sleeping, soldier, not with all the bed making you\'ll be doing. Then we\'ll go with that data file! Hey, you add a one and two zeros to that or we walk! You\'re going to do his laundry? I\'ve got to find a way to escape.</string>
+    <string name="post_a_question">Post a Question</string>
+    <string name="invitations">Invitations</string>
+    <string name="show_more">Show More</string>
+    <string name="questions">Questions</string>
+    <string name="header_title">Mr. Wide</string>
+    <string name="header_text">Instructor</string>
+    <string name="title_1">Downloads</string>
+    <string name="title_2">Bookmarks</string>
+    <string name="title_3">Notifications</string>
+    <string name="item_4">FAQ</string>
+    <string name="item_5">App Version</string>
+    <string name="item_6">Logout</string>
+
 </resources>

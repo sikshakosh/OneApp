@@ -39,7 +39,7 @@ public class SplashActivity extends FragmentActivity {
     private void initSkipButton(){
         skipButton = new AppButton(this,null,R.attr.borderlessButtonStyle);
         skipButton.setText(R.string.skip);
-        skipButton.setRippleColor(ColorStateList.valueOf(getResources().getColor(R.color.dark_gray)));
+        skipButton.setRippleColor(ColorStateList.valueOf(getResources().getColor(R.color.gray_50)));
         skipButton.setBackgroundColor(getResources().getColor(R.color.white));
         skipButton.setTextColor(getResources().getColor(R.color.black));
         skipButton.setHeight(50);
