@@ -3,6 +3,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.net.Network;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,6 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.res.ResourcesCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
@@ -23,42 +25,100 @@ import com.android.appcompose.layout.tabs.AppTabLayout;
 
 import com.android.appcompose.layout.tabs.TabType;
 import com.android.oneapp.R;
+import com.android.oneapp.fragments.ClassroomFragment;
+import com.android.oneapp.fragments.ConnectionFragment;
+import com.android.oneapp.fragments.HomeFragment;
+import com.android.oneapp.fragments.PostFragment;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.navigation.NavigationView;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private AppTabLayout tabLayout;
-
+    private DrawerLayout drawerLayout;
+    private AppBarLayout topAppBar;
+    private NavigationView navigationView;
+    private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        tabLayout = (AppTabLayout) findViewById(R.id.tab_host);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        topAppBar = (AppBarLayout) findViewById(R.id.topAppBar);
+        navigationView = (NavigationView)findViewById(R.id.navigationView);
 
         setSupportActionBar(toolbar);
-
-
-
-        setupTabLayout();
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawerLayout.openDrawer(Gravity.LEFT);
+            }
+        });
+        Class fragmentClass  = HomeFragment.class;
+        Fragment fragment = null;
+        try {
+            fragment = (Fragment) fragmentClass.newInstance();
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.mainContainer, fragment).commit();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }
+        setupDrawerContent(navigationView);
     }
 
-    private void setupTabLayout(){
-        ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
-        TabAdapter adapter = new TabAdapter(getSupportFragmentManager(), this);
-        viewPager.setAdapter(adapter);
-        tabLayout.setTextSize(18);
-        tabLayout.setAllCaps(false);
-        tabLayout.setDistributeEvenly(true);
-        tabLayout.setTabType(TabType.ICON_ONLY);
-        tabLayout.setSelectedIndicatorColors(getResources().getColor(android.R.color.white));
-        tabLayout.setActionBar(getSupportActionBar());
-        tabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.black));
-        tabLayout.setCustomFocusedColor(getResources().getColor(R.color.black));
-        tabLayout.setCustomUnfocusedColor(getResources().getColor(R.color.dark_gray));
-        tabLayout.setBackground(getResources().getDrawable(R.drawable.background_tab));
-        tabLayout.setViewPager(viewPager);
+    private void setupDrawerContent(NavigationView navigationView) {
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        selectDrawerItem(menuItem);
+                        return true;
+                    }
+                });
     }
+
+    public void selectDrawerItem(MenuItem menuItem) {
+        // Create a new fragment and specify the fragment to show based on nav item clicked
+        Fragment fragment = null;
+        Class fragmentClass;
+        switch(menuItem.getItemId()) {
+            case R.id.home:
+                fragmentClass = HomeFragment.class;
+                break;
+            case R.id.classrooms:
+                fragmentClass = ClassroomFragment.class;
+                break;
+            case R.id.connections:
+                fragmentClass = ConnectionFragment.class;
+                break;
+            case R.id.post:
+                fragmentClass = PostFragment.class;
+                break;
+            default:
+                fragmentClass = HomeFragment.class;
+        }
+
+        try {
+            fragment = (Fragment) fragmentClass.newInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // Insert the fragment by replacing any existing fragment
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.mainContainer, fragment).commit();
+
+        // Highlight the selected item has been done by NavigationView
+        menuItem.setChecked(true);
+        // Set action bar title
+        toolbar.setTitle(menuItem.getTitle());
+
+        // Close the navigation drawer
+        drawerLayout.closeDrawers();
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -67,123 +127,10 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.ShowNotification:
-                tabLayout.showIndicator(1);
-                return true;
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
 
-            case R.id.HideNotification:
-                tabLayout.hideIndicator(1);
-                return true;
 
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-    public static class TabFragment extends Fragment {
-
-        public static final String POSITION = "position";
-
-        private View view;
-
-        @Nullable
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            this.view = inflater.inflate(R.layout.fragment_tab, container, false);
-            return view;
-        }
-
-        @Override
-        public void onResume() {
-            super.onResume();
-            TextView positionText = (TextView) this.findViewById(R.id.FragmentTabText);
-
-            int position = getArguments().getInt(POSITION);
-            positionText.setText("Position " + position);
-        }
-
-        private View findViewById(int id) {
-            return view.findViewById(id);
-        }
-    }
-
-    public static class TabAdapter extends AppFragmentPagerAdapter {
-
-        private String[] titles = {
-                "Home",
-                "My Classrooms",
-                "My Network",
-                "Post",
-                "Notifications",
-        };
-
-        private int[] icons = {
-                R.drawable.ic_home,
-                R.drawable.ic_classrooms,
-                R.drawable.ic_network,
-                R.drawable.ic_post,
-                R.drawable.ic_notifications
-        };
-        private Context context;
-
-        public TabAdapter(FragmentManager fm, Context context) {
-            super(fm);
-            this.context = context;
-        }
-
-        @NonNull
-        @Override
-        public Fragment getItem(int position) {
-            Bundle bundle = new Bundle();
-            bundle.putInt(TabFragment.POSITION, position + 1);
-            Fragment selectedFragment = null;
-            switch (position){
-                case 0:
-                    //selectedFragment =  HomeFragment.newInstance("0", "Home Page");
-                    selectedFragment =  HomeFragment.newInstance("0", "Home Page");
-                    break;
-                case 1:
-                    selectedFragment =  ClassroomsFragment.newInstance("0", "Classrooms Page");
-                    break;
-                case 2:
-                    selectedFragment =  NetworkFragment.newInstance("0", "Network Page");
-                    break;
-                case 3:
-                    selectedFragment =  PostFragment.newInstance("0", "Post Page");
-                    break;
-                case 4:
-                    selectedFragment =  NotificationFragment.newInstance("0", "Notification Page");
-                    break;
-                default:
-                    return null;
-            }
-
-            selectedFragment.setArguments(bundle);
-
-            return selectedFragment;
-        }
-
-        @Override
-        public int getCount() {
-            return icons.length == titles.length ? icons.length : 0;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return titles[position];
-        }
-
-        @Override
-        public Drawable getPageDrawable(int position) {
-            return ResourcesCompat.getDrawable(context.getResources(), icons[position], null);
-        }
-
-        @NonNull
-        @Override
-        public String getToolbarTitle(int position) {
-            return titles[position];
-        }
+        return super.onOptionsItemSelected(item);
     }
 }
