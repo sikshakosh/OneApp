@@ -11,31 +11,31 @@
     <string name="sports_info_placeholder">Here is some news</string>
 
     <string-array name="member_names">
-        <item>Ayesha</item>
-        <item>Kishan</item>
-        <item>Priyanka</item>
-        <item>Vedant</item>
-        <item>Sushant</item>
-        <item>Ajit</item>
-        <item>Vinayak</item>
-        <item>Shubham</item>
-        <item>Astha</item>
-        <item>Vamsi</item>
-        <item>Pritish</item>
+        <item>Preethi</item>
+        <item>Amulya</item>
+        <item>Ayush</item>
+        <item>Rahul</item>
+        <item>Adrain</item>
+        <item>Nitin</item>
+        <item>Sainath</item>
+        <item>Subhadeep</item>
+        <item>Tanvi</item>
+        <item>Dheeraj</item>
+        <item>Swaugat</item>
     </string-array>
 
     <string-array name="classroom_info">
-        <item>App360</item>
-        <item>App360</item>
-        <item>App360</item>
-        <item>App360</item>
-        <item>App360</item>
-        <item>App360</item>
-        <item>App360</item>
-        <item>App360</item>
-        <item>App360</item>
-        <item>App360</item>
-        <item>App360</item>
+        <item>OneApp</item>
+        <item>OneApp</item>
+        <item>OneApp</item>
+        <item>OneApp</item>
+        <item>OneApp</item>
+        <item>OneApp</item>
+        <item>OneApp</item>
+        <item>OneApp</item>
+        <item>OneApp</item>
+        <item>OneApp</item>
+        <item>OneApp</item>
     </string-array>
 
     <string-array name="questions">
@@ -53,17 +53,17 @@
     </string-array>
 
     <string-array name="questions_postedby">
-        <item>Ayesha</item>
-        <item>Kishan</item>
-        <item>Priyanka</item>
-        <item>Vedant</item>
-        <item>Sushant</item>
-        <item>Ajit</item>
-        <item>Vinayak</item>
-        <item>Shubham</item>
-        <item>Astha</item>
-        <item>Vamsi</item>
-        <item>Pritish</item>
+        <item>Preethi</item>
+        <item>Amulya</item>
+        <item>Ayush</item>
+        <item>Rahul</item>
+        <item>Adrain</item>
+        <item>Nitin</item>
+        <item>Sainath</item>
+        <item>Subhadeep</item>
+        <item>Tanvi</item>
+        <item>Dheeraj</item>
+        <item>Swaugat</item>
     </string-array>
 
     <string name="supporting">Greyhound divisively hello coldly wonderfully marginally far upon excluding.</string>
