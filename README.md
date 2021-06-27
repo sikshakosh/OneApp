@@ -24,13 +24,12 @@ Here we work with android beginners to develop common modules used in almost all
 1. ImageSlider
 2. Image Slider with Dot Indicator
 3. Addded Skip Button
-4. Added TabLayout
+4. Added DrawerLayout with Navigation View
+5. Designed Home, Connection, Classroom, Post Question Screens 
+6. Added ScreenShots of View
 
 ## Under Development
-
-4. Design Home Screen
-5. Search Screen
-6. Account Screen
+6. Create Classroom Detail Layout
 
 
 
